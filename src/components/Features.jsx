@@ -13,7 +13,7 @@ export default function Features() {
           {features.map((feature, i) => {
             const Icon = icons[feature.icon]
             return (
-              <div key={i} className="group p-6 rounded-2xl bg-zinc-300 border border-zinc-800/50 hover:border-zinc-500 hover:bg-zinc-900 transition-all duration-300 justify-center items-center">
+              <div key={i} className="group p-6 rounded-2xl bg-zinc-300 border border-zinc-800/50 hover:border-zinc-00 hover:bg-zinc-100 transition-all duration-300 justify-center items-center">
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-yellow-700 to-red-800 flex items-center justify-center text-zinc-900 mb-4 transition-colors">
                   <Icon />
                 </div>

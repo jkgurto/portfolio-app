@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Hero() {
   return (
     <section className="pt-32 pb-20 px-6">
@@ -17,17 +19,13 @@ export default function Hero() {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="https://drive.proton.me/urls/SDT5RWXQRG#BltECiXKbKC8" target="_blank">
+          <Link to="/about">
             <button className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-yellow-700 to-red-800 rounded-xl font-semibold text-lg hover:opacity-50 transition-colors shadow-lg shadow-black-500/25">
-              Download Resume
+            About Me
             </button>
-          </a>
-          <a href="https://drive.proton.me/urls/VRKYYYEE9G#j63Xl6tRcWvM" target="_blank">
-            <button className="w-full sm:w-auto px-8 py-4 bg-zinc-300 border border-slate-700 rounded-xl font-semibold text-lg hover:bg-slate-700 transition-colors shadow-lg shadow-black-500/25">
-              Download Design Explorations
-            </button>
-          </a>
+          </Link>
         </div>
+        
       </div>
     </section>
   )

@@ -40,3 +40,18 @@ export const socials = [
   { icon: 'linkedin', title: 'LinkedIn', link: 'https://www.linkedin.com/in/jacquelinegurto/' },
   { icon: 'github', title: 'GitHub', link: 'https://github.com/jkgurto' },
 ];
+
+export const projects = [
+  {
+    icon: 'web',
+    title: 'Portfolio Website',
+    desc: 'My portfolio website built with HTML, JavaScript, React, and Tailwind CSS. Automatically deploys on Netlify when pushed to GitHub.',
+    img: 'https://jacqui3d.com/og-image.png'
+  },
+  {
+    icon: 'code',
+    title: 'Coming Soon',
+    desc: 'More coming soon.',
+    img: 'https://jacqui3d.com/favicon.svg'
+  },
+];
