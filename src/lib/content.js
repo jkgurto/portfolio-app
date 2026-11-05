@@ -46,12 +46,21 @@ export const projects = [
     icon: 'web',
     title: 'Portfolio Website',
     desc: 'My portfolio website built with HTML, JavaScript, React, and Tailwind CSS. Automatically deploys on Netlify when pushed to GitHub.',
-    img: 'https://jacqui3d.com/og-image.png'
+    img: '/og-image.png',
+    link: '/'
+  },
+  {
+    icon: 'code',
+    title: 'Data Visualisation',
+    desc: 'Visualising data with Rechart js.',
+    img: '/chart-image.png',
+    link: '/viz'
   },
   {
     icon: 'code',
     title: 'Coming Soon',
     desc: 'More coming soon.',
-    img: 'https://jacqui3d.com/favicon.svg'
+    img: '/favicon.svg',
+    link: '/projects'
   },
 ];

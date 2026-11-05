@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { projects } from '../lib/content.js'
 import { icons } from './Icons.jsx'
 import Nav from './Nav.jsx'
@@ -23,8 +24,10 @@ function Projects() {
                       <Icon />
                     </div>
                     <img src={project.img} alt={project.title} className="w-full h-auto rounded-lg mb-4" />
-                    <h3 className="text-lg font-semibold mb-2 text-zinc-700">{project.title}</h3>
-                    <p className="text-zinc-400 text-sm text-left leading-relaxed">{project.desc}</p>
+                    <Link to={project.link} className="text-sm text-slate-400 hover:text-white transition-colors">
+                      <h3 className="text-lg font-semibold mb-2 text-zinc-700">{project.title}</h3>
+                      <p className="text-zinc-400 text-sm text-left leading-relaxed">{project.desc}</p>
+                    </Link>
                   </div>
                 )
               })}

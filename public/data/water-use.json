@@ -1,0 +1,20 @@
+[
+  { "shortName": "Agriculture",
+    "fullName": "Agriculture, forestry and fishing",
+    "waterConsumption":  4679376  },
+  { "shortName": "Mining",
+    "fullName": "Mining",
+    "waterConsumption":  109816  },
+  { "shortName": "Manufacturing",
+    "fullName": "Manufacturing",
+    "waterConsumption":  91474  },
+  { "shortName": "Total Energy",
+    "fullName": "Total Electricity, gas, water and waste services",
+    "waterConsumption":  1610805  },
+  { "shortName": "Other industries",
+    "fullName": "Other industries",
+    "waterConsumption":  329949  },
+  { "shortName": "Households",
+    "fullName": "Households",
+    "waterConsumption":  553605  }
+]
