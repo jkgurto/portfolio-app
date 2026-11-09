@@ -1,6 +1,52 @@
-import { BarChart, Bar, XAxis, YAxis, Text, Tooltip, ResponsiveContainer } from 'recharts'
+import { BarChart, Bar, CartesianGrid, Line, LineChart, XAxis, YAxis, Text, Tooltip, ResponsiveContainer } from 'recharts'
 import { useEffect, useState } from 'react';
 import Nav from './Nav.jsx'
+
+// TODO read from json file
+const householdConsumptionData = [
+{
+	year: "23-24",
+  consumption: "553605"
+},
+{
+	year: "22-23",
+  consumption: "528805"
+},
+{
+	year: "21-22",
+  consumption: "528653"
+},
+{
+	year: "20-21",
+  consumption: "545087"
+},
+{
+	year: "19-20",
+  consumption: "551594"
+},
+{
+	year: "18-19",
+  consumption: "576100"
+},
+{
+	year: "17-18",
+  consumption: "598765"
+},
+{
+	year: "16-17",
+  consumption: "560691"
+},
+{
+	year: "15-16",
+  consumption: "543734"
+},
+{
+	year: "14-15",
+  consumption: "535021"
+},
+]
+
+const yTicks = [500000, 510000, 520000, 530000, 540000, 550000, 560000, 570000, 580000, 590000, 600000];
 
 function Viz() {
 
@@ -45,7 +91,7 @@ function Viz() {
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-[1.1]">
             Data Visualisation
             </h1>
-            <p className="text-slate-600 mb-6">NSW Total Water consumption (Megalitres), 2023-24</p>
+            <p className="text-slate-600 mb-6 text-center">NSW Total Water consumption (Megalitres), 2023-24</p>
             <p className="text-slate-400 mb-6 text-left">Total water use minus total water supply (supply of distributed water, wastewater, reuse water, and return flows).</p>
             </div>
 
@@ -71,7 +117,25 @@ function Viz() {
             <p className="text-slate-400 mb-6">Australian Bureau of Statistics (2025) 
               <a href="https://www.abs.gov.au/statistics/environment/environmental-accounts/water-account-australia/2023-24"
               className="text-underline hover:text-blue-400"> Water Account, Australia</a>
-              , accessed 04 Month 2026.</p>
+              , accessed 04 November 2026.</p>
+
+            <p className="text-slate-600 mb-6 text-center">NSW Household Water consumption (Megalitres), by year</p>
+            <ResponsiveContainer width="100%" height={350}>
+              <LineChart data={householdConsumptionData}>
+                <CartesianGrid />
+
+                <XAxis dataKey="year" angle={-45} textAnchor="end" height={100} interval={0}  />
+
+                <YAxis width={100} ticks={yTicks} />
+                
+                <Line dataKey="consumption"/>
+              </LineChart>
+            </ResponsiveContainer>
+
+            <p className="text-slate-400 mb-6">Australian Bureau of Statistics (2025) 
+              <a href="https://www.abs.gov.au/statistics/environment/environmental-accounts/water-account-australia/2023-24"
+              className="text-underline hover:text-blue-400"> Water Account, Australia</a>
+              , accessed 04 November 2026.</p>
         </section>
     </div>
   )
