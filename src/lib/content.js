@@ -57,6 +57,13 @@ export const projects = [
     link: '/viz'
   },
   {
+    icon: 'image',
+    title: 'Design Explorations',
+    desc: "I'm learning some graphic design for visualising data.",
+    img: '/design-image.jpg',
+    link: '/design'
+  },
+  {
     icon: 'code',
     title: 'Coming Soon',
     desc: 'More coming soon.',

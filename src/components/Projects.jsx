@@ -23,8 +23,8 @@ function Projects() {
                     <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-yellow-700 to-red-800 flex items-center justify-center text-zinc-900 mb-4 transition-colors">
                       <Icon />
                     </div>
-                    <img src={project.img} alt={project.title} className="w-full h-auto rounded-lg mb-4" />
                     <Link to={project.link} className="text-sm text-slate-400 hover:text-white transition-colors">
+                      <img src={project.img} alt={project.title} className="w-full h-auto rounded-lg mb-4" />
                       <h3 className="text-lg font-semibold mb-2 text-zinc-700">{project.title}</h3>
                       <p className="text-zinc-400 text-sm text-left leading-relaxed">{project.desc}</p>
                     </Link>

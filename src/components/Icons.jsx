@@ -6,8 +6,9 @@ import { DiWindows } from 'react-icons/di';
 import { FiLoader } from 'react-icons/fi';
 import { FiGitPullRequest } from 'react-icons/fi';
 import { FiAlignLeft } from 'react-icons/fi';
-import { FiLinkedin } from 'react-icons/fi';
 import { FiGithub } from "react-icons/fi";
+import { FiImage } from 'react-icons/fi';
+import { FiLinkedin } from 'react-icons/fi';
 import { FiMonitor } from "react-icons/fi";
 import { FiUsers } from "react-icons/fi";
 
@@ -19,6 +20,7 @@ export const icons = {
   scm: FiGitPullRequest,
   users: FiUsers,
   docs: FiAlignLeft,
+  image: FiImage,
 };
 
 export const socialIcons = {
