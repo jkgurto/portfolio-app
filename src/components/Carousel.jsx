@@ -1,5 +1,5 @@
 import Nav from './Nav.jsx'
-import { useState, useCallback } from 'react'
+import { useState, useRef, useCallback } from 'react'
 
 import { FiChevronLeft } from "react-icons/fi";
 import { FiChevronRight } from "react-icons/fi";
@@ -9,9 +9,53 @@ function Carousel({ items, onZoom }) {
     const next = useCallback(() => setIndex(i => (i + 1) % items.length), [items.length])
     const prev = useCallback(() => setIndex(i => (i - 1 + items.length) % items.length, [items.length]))
 
+    const touchStart = useRef(null)   // remembered swipe start position
+    const stageRef = useRef(null)    // so keypresses only fire when carousel is focused
+
+    // ---- Touch swipe ----
+    const onTouchStart = e => {
+        touchStart.current = e.touches[0].clientX
+    }
+    const onTouchEnd = e => {
+        if (touchStart.current === null) {
+            return
+        }
+        const delta = e.changedTouches[0].clientX - touchStart.current
+        touchStart.current = null
+
+        if (Math.abs(delta) < 40) {
+            return          // ignore taps and micro-jitters
+        }
+        if (delta < 0) {
+            next()          // swiped left → next
+        }                      
+        else {
+            prev()          // swiped right → previous
+        }
+    }
+
+    // ---- Keyboard ----
+    const onKeyDown = e => {
+        if (e.key === 'ArrowRight') {
+            e.preventDefault(); // prevent scrolling horizontally
+            next()
+        }
+        if (e.key === 'ArrowLeft') {
+            e.preventDefault(); // prevent scrolling horizontally
+            prev()
+        }
+    }
+
+
     return (
 
-        <div className="relative overflow-hidden rounded-lg border border-slate-200">
+        <div className="relative overflow-hidden rounded-lg border border-slate-200 focus:outline-none focus-visible:ring-2 ring-yellow-700"
+            ref={stageRef}
+            tabIndex={0} // makes the carousel focusable
+            onKeyDown={onKeyDown}
+            onTouchStart={onTouchStart}
+            onTouchEnd={onTouchEnd}
+            aria-roledescription="carousel">
 
             {/*Stage*/}
             <div
